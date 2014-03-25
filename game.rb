@@ -39,35 +39,24 @@ while continue_game
   # while the user wants to continue...
 
   # let's filter the hash for only the first page's data
-  p1 = pages_with_questions.select do |k,v|
-    k.include? "~p1" # match any key that includes ~p1
-  end
+    # match any key that includes ~p1
 
   # let's iterate over all the matched values
-  p1.values.each_with_index do |v,i| 
     # when we are on the 0th value, output without the index
     # otherwise output with the index
 
-    puts i == 0 ? "#{v}" : "#{i}) #{v}"
-  end
-
   # let's see which choice the user picks
-  user_input = gets.chomp.to_i
 
   # let's figure out the next room to go to
   # by filtering our p1 data set down further
   # so that we may get the key of the user 
   # selected option
-  next_room = p1.select do |k,v|
     # we filter by checking against the key containing
     # the user's selected choice number
-    k.include? "~p1:c#{user_input}"
-  end.keys[0].slice(-2,2) 
   # at the end let's grab the key, and chop off the last
   # two characters. that is the next page. presto
 
   # now output the next room's text. voila.
-  puts pages_with_questions["~#{next_room}"]
 
   # ask the user if they want to resume this
   puts "Do you want to try another? (y/n)"

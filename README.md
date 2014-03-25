@@ -7,6 +7,17 @@ follow Gordon's recipe, or even call a friend.
 
 [Gordon Ramsey's Scrambled Eggs](http://www.youtube.com/watch?v=PUP7U5vTMM0)
 
+### What you have
+
+* `game.rb` - run it with `ruby game.rb` to see what it does
+* `story.txt` 
+  * contains the story with its wacky format:
+    * items started with something like `~p1` are the pages of the story
+      book
+    * items started with something like `~p1:c1:p2` are the prompts
+    * when the user responds to a prompt, they get moved to the
+      corresponding story point
+
 ### Instructions
 Using story.txt as the file containing the story, implement a
 choose-your-own-adventure style game. 
